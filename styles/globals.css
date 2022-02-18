@@ -1,9 +1,43 @@
+:root {
+  --gradient: radial-gradient(
+      41.48% 11.48% at 2.38% 8.52%,
+      #747de9 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(135deg, #72edf2 0%, #5151e5 100%);
+  --primary-font: 'Poppins';
+  --primary-color: #310a90;
+  --white: #ffffff;
+  --secondary-color: 'transparent';
+  --Headline-1: 700 95px/153px var(--primary-font);
+  --Headline-2: 700 59px/95px var(--primary-font);
+  --Headline-3: 700 48px/77px var(--primary-font);
+  --Headline-4: 700 34px/55px var(--primary-font);
+  --Headline-5: 700 24px/38px var(--primary-font);
+  --Headline-5-light: 400 24px/38px var(--primary-font);
+  --Body-1: 400 16px/25px var(--primary-font);
+  --Body-2: 400 14px/22px var(--primary-font);
+  --Button: 700 14px/22px var(--primary-font);
+  --Caption: 400 12px/19px var(--primary-font);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+  background: var(--gradient);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 a {
