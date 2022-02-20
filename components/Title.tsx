@@ -29,11 +29,13 @@ export const Title: FC<TitleProps> = ({title, custom}) => {
           box-shadow: -4px 4px 0px var(--white);
           align-self: flex-start;
           text-align: center;
+          text-transform: uppercase;
         }
 
         @media (min-width: 768px) {
           .project-title {
             margin-block-end: 20px;
+            font: var(--Headline-4);
           }
 
           .strech-desktop {
