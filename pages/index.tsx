@@ -8,6 +8,7 @@ import {Comments} from '../components/Comments'
 import {Projects} from '../components/Projects'
 import {Footer} from '../components/Footer'
 import {Form} from '../components/Form'
+import {ThreeBoxImage} from '../components/ThreeBoxImage'
 import UserLeo from '../public/user-leo.svg'
 import UserJason from '../public/user-jason.svg'
 import UserMarco from '../public/user-marco.svg'
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
           <Impressions />
           <Projects
             image={LaptopIphonePic}
-            title="leonidasesteban.com"
+            title="teclab"
             info="Accede a más de 120 proyectos que te ayudarán a mejorar 
           tus habilidades como desarrollador Front-End."
             altText="laptop-iphone"
@@ -67,6 +68,7 @@ const Home: NextPage = () => {
             comment="Por primera vez en la historia de nuestra empresa, aparecimos en todas las plataformas en las que trabajamos"
             commentAuthor="MARCO CORTEZ / NETNET"
           />
+          <ThreeBoxImage />
           <ContainerWrapper maxWidth={543}>
             <Form />
           </ContainerWrapper>
