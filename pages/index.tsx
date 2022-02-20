@@ -1,6 +1,5 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
-import {Button} from '../components/Button'
 import {Header} from '../components/Header'
 import {Hero} from '../components/Hero'
 import {ContainerWrapper} from '../components/Wrapper'
@@ -8,6 +7,7 @@ import {Impressions} from '../components/Impressions'
 import {Comments} from '../components/Comments'
 import {Projects} from '../components/Projects'
 import {Footer} from '../components/Footer'
+import {Form} from '../components/Form'
 import UserLeo from '../public/user-leo.svg'
 import UserJason from '../public/user-jason.svg'
 import UserMarco from '../public/user-marco.svg'
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Portafolio Jaume</title>
       </Head>
-      <ContainerWrapper>
+      <ContainerWrapper maxWidth={1158} padding={16}>
         <Header />
         <main>
           <Hero />
@@ -67,6 +67,9 @@ const Home: NextPage = () => {
             comment="Por primera vez en la historia de nuestra empresa, aparecimos en todas las plataformas en las que trabajamos"
             commentAuthor="MARCO CORTEZ / NETNET"
           />
+          <ContainerWrapper maxWidth={543}>
+            <Form />
+          </ContainerWrapper>
         </main>
 
         <Footer />

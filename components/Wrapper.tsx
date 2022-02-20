@@ -1,15 +1,25 @@
 import React, {FC} from 'react'
 
-export const ContainerWrapper: FC = ({children}) => {
+interface ContainerWrapperProps {
+  maxWidth: number
+  padding?: number
+  children?: React.ReactNode
+}
+
+export const ContainerWrapper: FC<ContainerWrapperProps> = ({
+  maxWidth,
+  padding = 0,
+  children,
+}) => {
   return (
     <>
       <div className="container-wrapper">{children}</div>
       <style jsx>{`
         .container-wrapper {
-          max-inline-size: 1158px;
+          max-inline-size: ${maxWidth}px;
           margin: auto;
-          padding-inline-start: 16px;
-          padding-inline-end: 16px;
+          padding-inline-start: ${padding}px;
+          padding-inline-end: ${padding}px;
         }
       `}</style>
     </>

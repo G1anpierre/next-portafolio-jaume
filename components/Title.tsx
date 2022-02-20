@@ -2,12 +2,17 @@ import React, {FC} from 'react'
 
 interface TitleProps {
   title: string
+  custom?: string
 }
 
-export const Title: FC<TitleProps> = ({title}) => {
+export const Title: FC<TitleProps> = ({title, custom}) => {
   return (
     <>
-      <a target="_blank" href="/" className="project-title">
+      <a
+        target="_blank"
+        href="/"
+        className={['project-title', custom].join(' ')}
+      >
         {title}
       </a>
       <style jsx>{`
@@ -23,11 +28,16 @@ export const Title: FC<TitleProps> = ({title}) => {
           padding-inline-start: 8px;
           box-shadow: -4px 4px 0px var(--white);
           align-self: flex-start;
+          text-align: center;
         }
 
         @media (min-width: 768px) {
           .project-title {
             margin-block-end: 20px;
+          }
+
+          .strech-desktop {
+            align-self: stretch;
           }
         }
       `}</style>
