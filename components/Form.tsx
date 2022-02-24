@@ -2,8 +2,14 @@ import React, {FC} from 'react'
 import {useFormik} from 'formik'
 import {Title} from '../components/Title'
 import {Button} from '../components/Button'
+import {useForm, ValidationError} from '@formspree/react'
+
+// https://formspree.io/f/mpzbdejo
 
 export const Form: FC = () => {
+  const FORM_KEY = process.env.NEXT_PUBLIC_FORMSPREE_KEY
+  const [state, handleSubmit] = useForm(FORM_KEY as string)
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -11,9 +17,14 @@ export const Form: FC = () => {
       message: '',
     },
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+      handleSubmit(values)
     },
   })
+
+  if (state.succeeded) {
+    return <p>Thanks for joining!</p>
+  }
+
   return (
     <>
       <div className="form-container">
@@ -49,7 +60,14 @@ export const Form: FC = () => {
           </label>
           <label>
             Mensaje
-            <textarea rows={6} />
+            <textarea
+              rows={6}
+              name="message"
+              placeholder="Escribe tu mensaje"
+              onChange={formik.handleChange}
+              value={formik.values.message}
+              className="style-input"
+            />
           </label>
 
           <Button
